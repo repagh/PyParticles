@@ -135,7 +135,7 @@ class ParticlesSet(object):
         """
         
         for k in self.__property_dict.keys() :
-            if self.__property_dict[k] == None :
+            if self.__property_dict[k] is None :
                 continue 
             
             if k == "label" :
@@ -206,10 +206,10 @@ class ParticlesSet(object):
             pset.add_property_by_name( "radius" , dim=1 , to_type=np.float64 )
         """
         
-        if to_type == None :
+        if to_type is None :
             to_type = self.dtype
         
-        if dim == None :
+        if dim is None :
             dim = self.dim
         
         if model == "numpy_array" :
@@ -274,7 +274,7 @@ class ParticlesSet(object):
         lst = lstX + lstV
         lst.append( lstM )
         
-        if self.__label != None :
+        if self.__label is not None :
             lst.append( self.__label[i] )
             
         return lst
@@ -332,7 +332,7 @@ class ParticlesSet(object):
         """
         Update the particle set according to the boundary rule
         """
-        if self.__bound != None :
+        if self.__bound is not None :
             self.__bound.boundary( self )
         
     def get_boundary( self ):
@@ -347,12 +347,12 @@ class ParticlesSet(object):
 
       
     def append_logger( self , logger , key=None ):
-        if key == None :
+        if key is None :
             key = "".join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for x in range(40))
             
         self.__log[key] = logger
         
-        if self.__default_logger == None :
+        if self.__default_logger is None :
             self.__default_logger = key
         
         return key

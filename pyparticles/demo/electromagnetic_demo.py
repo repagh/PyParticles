@@ -125,4 +125,3 @@ def electromag_field():
     a.start()
     
     return
-    

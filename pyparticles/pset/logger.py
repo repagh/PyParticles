@@ -43,7 +43,7 @@ class Logger ( object ):
         
         self.__state = 0
         
-        if sim_time != None :
+        if sim_time is not None :
             self.__sim_time = sim_time
             self.__log_time = np.zeros(( log_max_size ))
         else :
@@ -94,13 +94,13 @@ class Logger ( object ):
             self.__state = 1 
                     
         
-        if self.__sim_time != None :
+        if self.__sim_time is not None :
             self.__log_time[ self.__Lb ] = self.__sim_time.time
         
         if self.__log_X is not None :
             self.__log_X[ self.__Lb , : , : ] = self.__pset.X
 
-        if self.__log_V != None :
+        if self.__log_V is not None :
             self.__log_V[ self.__Lb , : , : ] = self.__pset.V
                     
 
@@ -221,7 +221,7 @@ class Logger ( object ):
             return True
     
     def get_log_V_enabled(self):
-        return self.__log_V != None
+        return self.__log_V is not None
 
 
     log_V_enabled = property( get_log_V_enabled , doc="return true if the logging of the position is enabled")

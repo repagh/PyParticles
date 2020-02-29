@@ -111,3 +111,5 @@ def bubble():
     a.start()
     
     return
+
+bubble()

@@ -59,7 +59,7 @@ class ConstrainedX ( ct.Constraint ):
             return 
         
         
-        if  self.__X_cr == None :
+        if  self.__X_cr is None :
             self.__X_cr = np.array( constr )
             self.__X_cr_i = np.array( indx , dtype=np.int64 )
         else :

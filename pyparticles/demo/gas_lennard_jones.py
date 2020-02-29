@@ -84,4 +84,3 @@ def gas_lj():
     a.start()
     
     return 
-    
